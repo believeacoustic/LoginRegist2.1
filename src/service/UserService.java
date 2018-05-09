@@ -11,6 +11,7 @@ import domain.User;
 public class UserService
 {
     UserDao userDao= DaoFactory.getUserDao();
+    //用户登录注册
 
     public void regist(User user) throws UserException
     {
@@ -18,6 +19,7 @@ public class UserService
         if (_user!=null)
         {
             throw  new UserException("用户名"+user.getUsername()+"已被注册");
+
         }
         userDao.add(user);
     }
